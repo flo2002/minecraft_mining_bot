@@ -1,2 +1,5 @@
 pyautogui
 numpy
+keyboard
+pandas
+mouse
