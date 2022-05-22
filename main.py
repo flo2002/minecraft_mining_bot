@@ -1,4 +1,5 @@
 # from Replayer file import Replayer class
+import threading
 from Replayer import Replayer
 from Recorder import Recorder
 
@@ -28,11 +29,14 @@ class GUI:
 
     def record(self):
         self.status_label_text.set("Start the recording with \"g\" and stop it with \"h\"")
-        Recorder().record()
+        self.recorder = Recorder()
+        self.recorder.record()
+        
 
     def replay(self):
         self.status_label_text.set("Start the replaying with \"g\" and stop it with \"h\"")
-        Replayer().replay()
+        self.replayer = Replayer(self.recorder)
+        self.replayer.replay()
 
 root = Tk()
 root.geometry("400x100")
