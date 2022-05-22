@@ -1,5 +1,5 @@
 
 
-class Replayer:
-    def __init__(self):
+class Replayer:    
+    def replay(self):
         print("Replaying...")

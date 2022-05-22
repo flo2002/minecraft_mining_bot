@@ -1,10 +1,13 @@
+# from Replayer file import Replayer class
+from Replayer import Replayer
+from Recorder import Recorder
+
 from tkinter import Tk, Label, Button, StringVar
-import Replayer, Recorder
 
 class GUI:
     def __init__(self, master):
         self.master = master
-        master.title("A simple Minecraft Mining Bot")
+        master.title("A simple Minecraft mining bot")
 
         self.label_index = 0
         self.label_text = StringVar()
@@ -19,11 +22,14 @@ class GUI:
         self.replay_button.pack()
 
     def record(self):
-        Recorder.record()
+        recorder = Recorder()
+        recorder.record()
 
     def replay(self):
-        Replayer.replay()
+        replayer = Replayer()
+        replayer.replay()
 
 root = Tk()
+root.geometry("400x100")
 my_gui = GUI(root)
 root.mainloop()
