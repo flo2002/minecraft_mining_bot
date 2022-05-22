@@ -1,12 +1,11 @@
 # from Replayer file import Replayer class
-import threading
 from Replayer import Replayer
 from Recorder import Recorder
 
 from tkinter import Tk, Label, Button, StringVar, Frame
 
 class GUI:
-    def __init__(self, master):
+    def __init__(self, master):        
         self.master = master
         master.title("A simple Minecraft mining bot")
 
@@ -24,18 +23,21 @@ class GUI:
         self.replay_button.pack(in_=self.button_frame, side="right")
         
         self.status_label_text = StringVar()
+        self.status_label_text.set("Start with \"g\" and stop with \"h\"") 
         self.status_label = Label(master, textvariable=self.status_label_text)
         self.status_label.pack()
-
-    def record(self):
-        self.status_label_text.set("Start the recording with \"g\" and stop it with \"h\"")
-        self.recorder = Recorder()
-        self.recorder.record()
         
+        self.recorder = Recorder()
+        self.replayer = Replayer(self.recorder.keyboard_events,
+            self.recorder.mouse_events)
+        
+    def record(self):
+        self.recorder.record()
 
     def replay(self):
-        self.status_label_text.set("Start the replaying with \"g\" and stop it with \"h\"")
-        self.replayer = Replayer(self.recorder)
+        self.replayer.update(self.recorder.keyboard_events,
+                             self.recorder.mouse_events, 
+                             self.status_label_text)
         self.replayer.replay()
 
 root = Tk()
