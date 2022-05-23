@@ -1,5 +1,5 @@
 # minecraft_mining_bot
-## Installation & Excecution
+## Installation & Execution
 1. install Python3 (& pip)
 2. pip install -r requirements
 3. python main.py
