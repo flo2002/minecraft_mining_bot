@@ -1,6 +1,2 @@
-pyautogui
-numpy
 keyboard
-pandas
 mouse
-tkinter

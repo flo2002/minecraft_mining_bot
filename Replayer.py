@@ -25,13 +25,12 @@ class Replayer:
         
         while True:
             if not self.isReplaying:
-                process_loop_breaker_listener.kill()   # SIGTERM
+                process_loop_breaker_listener.terminate()   # SIGTERM
                 #loop_breaker_listener.close()      # for the garbage collector
-                process_replaying_loop.kill()
+                process_replaying_loop.terminate()
                 #replaying_loop.close()
                 break
                 print("stopped")
-        
 
     def replaying_loop(self):
         print("replaying_loop started")
