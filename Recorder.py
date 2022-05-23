@@ -19,4 +19,3 @@ class Recorder:
         self.keyboard_events = keyboard.stop_recording()
         mouse.unhook(self.mouse_events.append)
         print("stopped")
-        
