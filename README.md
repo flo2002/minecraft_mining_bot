@@ -1,4 +1,12 @@
 # minecraft_mining_bot
-## installation
-1. Install Python (& pip)
+## Installation
+1. install Python3 (& pip)
 2. pip install -r requirements
+
+## Limitations
+- the mouse movement is blocked by the Minecraft client application
+- no detection of the block (to mine only as long as it is necassary)
+- no life checker
+- no message, if the dumb bot needs assistance
+- no life rescuing actions
+- not a good UI
