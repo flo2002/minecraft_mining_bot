@@ -29,9 +29,10 @@ class GUI:
         
         self.recorder = Recorder()
         self.replayer = Replayer(self.recorder.keyboard_events,
-            self.recorder.mouse_events)
+                                 self.recorder.mouse_events)
         
     def record(self):
+        self.status_label_text.set("Start with \"g\" and stop with \"h\"") 
         self.recorder.record()
 
     def replay(self):
