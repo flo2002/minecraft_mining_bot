@@ -22,18 +22,8 @@ class Replayer:
         process_loop_breaker_listener.start()
         process_replaying_loop = th.Thread(target=self.replaying_loop)
         process_replaying_loop.start()
-        
-        '''while True:
-            if not self.isReplaying:
-                process_loop_breaker_listener.terminate()   # SIGTERM
-                loop_breaker_listener.close()               # for the garbage collector
-                process_replaying_loop.terminate()
-                replaying_loop.close()
-                print("stopped")
-                break'''
 
     def replaying_loop(self):
-        print("replaying_loop started")
         while self.isReplaying:
             print("Replaying...")
             if (self.keyboard_events == []) or (self.mouse_events == []):
@@ -47,7 +37,6 @@ class Replayer:
         print("stopped")
 
     def loop_breaker_listener(self):
-        print("loop_breaker started")
         while True:
             if keyboard.is_pressed("h"):
                 self.isReplaying = False
