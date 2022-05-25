@@ -1,11 +1,11 @@
 # minecraft_mining_bot
-## Installation & Execution
+## Installation & Execution (for Beginners)
 1. install Python3 (& pip)
-2. pip install -r requirements
-3. download a release of this project
-4. python main.py
+2. download a release of this project and run following commands in this folder
+3. `pip install -r requirements.txt`
+4. `python main.py`
 
-## Limitations
+## Known Limitations
 - the mouse movement is blocked by the Minecraft client application
 - no detection of the block (to mine only as long as it is necassary)
 - no life checker
