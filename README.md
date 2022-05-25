@@ -2,7 +2,8 @@
 ## Installation & Execution
 1. install Python3 (& pip)
 2. pip install -r requirements
-3. python main.py
+3. download a release of this project
+4. python main.py
 
 ## Limitations
 - the mouse movement is blocked by the Minecraft client application
